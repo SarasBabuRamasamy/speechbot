@@ -1,0 +1,25 @@
+import speech_recognition as sr
+import pyttsx3
+
+def speech_to_text():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as mic:
+        print("Say something...")
+        recognizer.adjust_for_ambient_noise(mic, duration=1)
+        audio = recognizer.listen(mic)
+
+    try:
+        text = recognizer.recognize_google(audio)
+        print("You said: " + text)
+    except:
+        print("I didn't understand what you said.")
+
+def text_to_speech(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+
+if __name__ == "__main__":
+    while True:
+        speech_to_text()
+        text_to_speech("How can I help you?")
