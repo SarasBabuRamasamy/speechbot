@@ -9,3 +9,4 @@ A robotic chatbot for children with autism, built with python, wolfram, NLP, and
 7. Giving computer vision
 8.   Object recognition
 9.   facial recognition
+10.     using deepface in python https://github.com/serengil/deepface
